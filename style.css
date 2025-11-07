@@ -26,8 +26,8 @@ body {
     gap: 125px;
     list-style: none;
     display: flex;
-justify-content: center;
-align-items: center;
+    justify-content: center;
+    align-items: center;
 }
 
 .move-right li {
@@ -80,6 +80,7 @@ align-items: center;
     outline: 0;
     padding: 10px;
     border-radius: 0;
+    cursor: pointer;
 }
 
 .container {
@@ -120,8 +121,12 @@ align-items: center;
     gap: 100px;
 }
 
+.note-navbar ul li {
+    cursor: pointer;
+}
+
 textarea {
-    border: none;    
+    border: none;
     width: 400px;
     height: 350px;
     resize: none;

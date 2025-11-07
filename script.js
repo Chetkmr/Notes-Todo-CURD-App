@@ -14,9 +14,9 @@ addBtn.addEventListener(
 const saveNots = () => {
     const Notes = document.querySelectorAll(".note textarea");
     console.log(Notes);
-    
+
     const Data = [];
-    Notes.forEach((note) =>{
+    Notes.forEach((note) => {
         Data.push(note.value);
     });
     console.log(Data);
@@ -24,33 +24,26 @@ const saveNots = () => {
     localStorage.setItem("Notes", JSON.stringify(Data));
 }
 
-// (
-//     function(){
-//         const lsNotes = localStorage.parse(getItem("Notes"));
-//         console.log(lsNotes);
-        
-//     }
-// )()
 
 // function to add note
-const addNote = () => {
+const addNote = (text = "") => {
     const note = document.createElement("div");
     note.classList.add("note");
     note.innerHTML = `
             <div class="note-navbar">
                 <ul>
-                    <li class="edit">
+                    <li class="edit" >
                         Edit
                     </li>
                     <li class="save">
                         Save
                     </li>
                     <li class="remove-Note">
-                        Delete
+                    Delete
                     </li>
                 </ul>
             </div>
-            <textarea></textarea>
+            <textarea>${text}</textarea>
         `;
 
     //function to remove note
@@ -60,9 +53,31 @@ const addNote = () => {
     }
     );
 
+    // function to saveMnually
     note.querySelector(".save").addEventListener("click", function () {
         saveNots();
     });
+
+    // function use for autoSave
+    note.querySelector("textarea").addEventListener(
+        "focusout",
+        function () {
+            saveNots()
+        }
+    )
+
     main.appendChild(note);
+    saveNots()
+}
+// self colling function to put and get data from the localStorage
+(function () {
+    const lsNotes = JSON.parse(localStorage.getItem("Notes"));
+    console.log(lsNotes);
+    lsNotes.forEach(
+        (lsNotes) => {
+            addNote(lsNotes)
+        }
+    )
 
 }
+)()
