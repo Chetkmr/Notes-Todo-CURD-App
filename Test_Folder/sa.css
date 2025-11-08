@@ -35,6 +35,17 @@ body {
     color: white;
 }
 
+@media (max-width: 450px) {
+    .navbar ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+    margin: 0;
+    padding: 0;
+    }
+}
+
 /* --- ADD NOTE BUTTON --- */
 
 #addbtn {
