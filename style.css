@@ -1,142 +1,111 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* --- GENERAL PAGE STYLE --- */
 
 body {
-    width: 100%;
-    min-height: 100vh;
-    background-color: bisque;
-    /* margin: 10px;
-    padding: 10px; */
-    /* display: flex;
-    flex-wrap: wrap; */
+    margin: 0;
+    background: #EAD8B1;
+    font-family: Arial, sans-serif;
 }
+
+/* --- NAVBAR --- */
 
 .navbar {
     width: 100%;
-    background-color: #5aaed6;
-    padding: 12px 20px;
+    background: #3A6D8C;
+    padding: 15px 0;
+    border-radius: 0 0 12px 12px;
 }
 
-.move-right {
-    display: flex;
-    justify-content: flex-end;
-    gap: 125px;
+.navbar ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    align-items: center;
+    gap: 120px;
+    margin: 0;
+    padding: 0;
 }
 
-.move-right li {
+.navbar li {
     color: white;
     font-size: 18px;
     cursor: pointer;
 }
 
-.move-right a {
+.navbar a {
     text-decoration: none;
     color: white;
 }
 
-.move-right li:hover a,
-.move-right li:hover {
-    color: #0a282b;
-}
-
-
-/* .navbar {
-    background-color: rgb(59, 87, 87);
-    color: #fff;
-    width: 100%;
-    height: 70px;
-}
-
-.move-right {
-    text-align: right;
-}
-
-.move-right ul li {
-    display: inline-block;
-    margin: 20px;
-}
-
-.profile {
-    margin-right: 480px;
-} */
+/* --- ADD NOTE BUTTON --- */
 
 #addbtn {
-    height: 70px;
-    width: 180px;
-    position: fixed;
-    right: 50%;
-    top: 75px;
-    background-color: #220808;
-    font-size: 20px;
+    display: block;
+    margin: 25px auto;
+    padding: 12px 24px;
+    background: #001F3F;
     color: white;
-    border: 0;
-    outline: 0;
-    padding: 10px;
-    border-radius: 0;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
     cursor: pointer;
+    transition: 0.2s;
 }
+
+#addbtn:hover {
+    background: #58493e;
+}
+
+/* --- NOTES GRID --- */
 
 .container {
-    width: 100%;
-    height: max-content;
-    border: 10px solid red;
-    margin-top: 70px;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    padding: 10px;
 }
+
+/* --- INDIVIDUAL NOTE --- */
 
 .note {
-    width: 400px;
-    height: 400px;
-    background-color: aquamarine;
-    margin: 15px;
+    background: #a7ae9e;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
 }
 
-.note-navbar {
-    width: 100%;
-    height: 50px;
-    background-color: rgb(26, 15, 15);
-    color: white;
-    display: flex;
-    flex-wrap: wrap;
-}
+/* --- NOTE NAVBAR --- */
 
 .note-navbar ul {
-    width: 100%;
-    height: 100%;
     list-style: none;
-    padding: 0;
-    margin: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 25px;
-    gap: 100px;
-}
-
-.note-navbar ul li {
-    cursor: pointer;
-}
-
-textarea {
-    border: none;
-    width: 400px;
-    height: 350px;
-    resize: none;
+    justify-content: space-between;
+    background: #6A9AB0;
     padding: 10px;
-    font-size: 30px;
-    color: rgb(28, 43, 43);
-    background-color: rgb(165, 170, 150);
+    color: white;
+    border-radius: 8px;
+    margin: 0 0 10px 0;
 }
 
-.note-navbar textarea:focus {
-    border: 0;
-    outline: 0;
+.note-navbar li {
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.note-navbar li:hover {
+    opacity: 0.7;
+}
+
+/* --- TEXT AREA --- */
+
+.note textarea {
+    width: 95%;
+    height: 180px;
+    padding: 10px;
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+    resize: none;
+    background: #d0d5c7;
+    outline: none;
 }
