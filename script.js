@@ -43,7 +43,7 @@ const addNote = (text = "") => {
                     </li>
                 </ul>
             </div>
-            <textarea>${text}</textarea>
+            <textarea placeholder="Don’t think too hard—just type...!">${text}</textarea>
         `;
 
     //function to remove note
